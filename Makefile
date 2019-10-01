@@ -11,6 +11,9 @@ stop:
 	docker-compose down --volume
 
 clean:
+	rm ${PROJECT_NAME} -rf
+	rm ${APP_NAME} -rf
+	rm manage.py -f
 	docker-compose down -v --rmi all --remove-orphans
 
 create_app:
@@ -36,3 +39,6 @@ django_version:
 
 migrate:
 	docker-compose run web python manage.py migrate
+
+create_super_user:
+	docker-compose run web python manage.py createsuperuser

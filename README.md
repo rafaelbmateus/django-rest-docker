@@ -23,3 +23,6 @@ DATABASES = {
 ...
 ```
 For more informations: https://docs.djangoproject.com/en/1.11/ref/settings/#databases
+
+## Next steps?
+1. [Writing your first Django app](https://docs.djangoproject.com/en/1.7/intro/tutorial02/)

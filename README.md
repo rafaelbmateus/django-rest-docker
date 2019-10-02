@@ -7,6 +7,8 @@
 5. Create a super user: `make create_super_user`
 6. Run the project: `make start`
 
+Open in your browser: http://localhost:8000/
+
 ## Database config
 ```
 <myproject>/settings.py

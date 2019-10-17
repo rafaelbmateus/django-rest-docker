@@ -1,5 +1,3 @@
-PROJECT_NAME = myproject
-APP_NAME = myapp
 
 build:
 	docker-compose build
@@ -7,35 +5,14 @@ build:
 start:
 	docker-compose up -d
 
+restart:
+	docker-compose restart
+
 stop:
 	docker-compose down --volume
 
-clean:
-	rm ${PROJECT_NAME} -rf
-	rm ${APP_NAME} -rf
-	rm manage.py -f
-	docker-compose down -v --rmi all --remove-orphans
-
-create_app:
-	docker-compose run web ./manage.py startapp ${APP_NAME}
-
-create_project:
-	docker-compose run web django-admin startproject ${PROJECT_NAME} .
-
-pip_list:
-	docker-compose run web pip list
-
-python:
-	docker-compose run web python
-
-shell:
-	docker-compose run web python manage.py shell
-
-ssh:
-	docker-compose run web /bin/bash
-
-django_version:
-	docker-compose run web python -c "import django; print(django.get_version())"
+log:
+	docker-compose logs
 
 migrate:
 	docker-compose run web python manage.py migrate
